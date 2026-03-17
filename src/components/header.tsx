@@ -85,8 +85,8 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Button variant="default" size="sm" onClick={signInWithGoogle}>
-              Sign In
+            <Button variant="default" size="sm" asChild>
+              <a href="#install">Install Aplikasi</a>
             </Button>
           )}
         </div>
