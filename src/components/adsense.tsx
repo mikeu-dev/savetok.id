@@ -47,7 +47,7 @@ const AdSense: FC<AdSenseProps> = ({
   return (
     <ins
       key={pathname + adSlot}
-      className={cn("adsbygoogle block w-full data-[ad-status=unfilled]:hidden! empty:hidden!", className)}
+      className={cn("adsbygoogle block w-full data-[ad-status=unfilled]:hidden!", className)}
       style={{ display: 'block' }}
       data-ad-client="ca-pub-6698556269439251"
       data-ad-slot={adSlot}
