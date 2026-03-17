@@ -79,14 +79,7 @@ export default function AdminPage() {
                     </CardContent>
                 </Card>
 
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Settings</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <Button variant="outline">Manage Plans</Button>
-                    </CardContent>
-                </Card>
+
 
             </main>
             <Footer />
