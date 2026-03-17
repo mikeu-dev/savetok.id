@@ -45,20 +45,16 @@ const AdSense: FC<AdSenseProps> = ({
   }
 
   return (
-    <div className={cn("relative flex justify-center items-center overflow-hidden rounded-lg", className)} key={pathname + adSlot}>
-
-
-      {/* External AdSense */}
-      <ins
-        className="adsbygoogle relative z-10 w-full h-full pointer-events-none"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-6698556269439251"
-        data-ad-slot={adSlot}
-        data-ad-format={adFormat}
-        data-full-width-responsive={fullWidthResponsive.toString()}
-        suppressHydrationWarning
-      ></ins>
-    </div>
+    <ins
+      key={pathname + adSlot}
+      className={cn("adsbygoogle block w-full data-[ad-status=unfilled]:hidden", className)}
+      style={{ display: 'block' }}
+      data-ad-client="ca-pub-6698556269439251"
+      data-ad-slot={adSlot}
+      data-ad-format={adFormat}
+      data-full-width-responsive={fullWidthResponsive.toString()}
+      suppressHydrationWarning
+    ></ins>
   );
 };
 

@@ -98,7 +98,6 @@ export default function Home() {
               hidden: { opacity: 0 },
               show: { opacity: 1 }
             }}
-            className="my-5"
           >
             <AdSense adSlot="1234567890" className="w-full" />
           </motion.div>

@@ -85,7 +85,7 @@ export const DownloadModal: FC<DownloadModalProps> = ({ open, onOpenChange, down
         <div className="flex flex-col gap-6">
           {/* Ad Area with proper container */}
           <div className="relative rounded-xl overflow-hidden flex items-center justify-center">
-            <AdSense adSlot="9876543210" className="w-full h-full" />
+            <AdSense adSlot="9876543210" className="w-full text-center" />
           </div>
 
           {/* Status & Controls Area */}
