@@ -65,12 +65,7 @@ export function Header() {
                     <span>History</span>
                   </a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="/pricing" className="cursor-pointer">
-                    <Check className="mr-2 h-4 w-4" />
-                    <span>Pricing</span>
-                  </a>
-                </DropdownMenuItem>
+
                 <DropdownMenuItem asChild>
                   <a href="/admin" className="cursor-pointer">
                     <Tv2 className="mr-2 h-4 w-4" />

@@ -17,8 +17,7 @@ export async function createOrUpdateUser(user: User) {
             displayName: user.displayName,
             photoURL: user.photoURL,
             createdAt: serverTimestamp(),
-            lastLogin: serverTimestamp(),
-            role: 'free' // Default role
+            lastLogin: serverTimestamp()
         });
     } else {
         // Update existing user last login
