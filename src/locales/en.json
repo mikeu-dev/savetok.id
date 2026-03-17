@@ -3,7 +3,7 @@
     "home.title": "SaveTok ID Downloader",
     "home.subtitle": "Paste a TikTok video link to download it without watermark. Watch a short ad to support us!",
     "home.downloadCount": "You have downloaded {count} videos. Thanks for your support!",
-    "form.button": "Fetch Video",
+    "form.button": "Download",
     "form.error.url": "Please enter a valid URL.",
     "form.error.tiktokUrl": "Please enter a valid TikTok URL.",
     "result.thumbnailAlt": "Thumbnail for TikTok video: {title}",
