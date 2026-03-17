@@ -20,6 +20,11 @@ if (!admin.apps.length) {
         // is set as a strict, single-line JSON string with no unescaped newlines.
         // If running in Google Cloud environment (e.g. Cloud Run/Functions), default credentials might work:
         // admin.initializeApp(); 
+        
+        // Next.js build dummy app initialization to prevent static build crash:
+        admin.initializeApp({
+            projectId: "dummy-project-id"
+        });
     }
 }
 

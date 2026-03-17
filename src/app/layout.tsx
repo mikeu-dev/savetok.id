@@ -7,42 +7,42 @@ import { LanguageProvider } from '@/components/providers/language-provider';
 import { AuthProvider } from '@/components/auth-provider';
 
 const siteConfig = {
-  name: 'TikTok AdGate Downloader',
-  url: 'https://tiktok-adgate-downloader.com', // Ganti dengan URL domain production Anda
-  description: 'Download TikTok videos in HD without watermarks for free. Our simple tool lets you save MP4 videos or MP3 audio after a short ad. Fast, reliable, and unlimited.',
-  ogImage: 'https://tiktok-adgate-downloader.com/og-image.png', // Ganti dengan URL gambar OG Anda
+  name: 'SaveTok ID',
+  url: 'https://savetok.id', // Menunggu domain resmi, sementara pakai ini
+  description: 'Download video TikTok tanpa watermark gratis kualitas HD. Simpan VT, MP4, atau lagu MP3 dengan cepat, aman, dan tanpa biaya berlangganan.',
+  ogImage: 'https://savetok.id/og-image.png', 
   links: {
-    twitter: 'https://twitter.com/your_handle', // Ganti dengan handle Twitter Anda
+    twitter: 'https://twitter.com/savetok_id', 
   },
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} - Gratis & Tanpa Watermark`,
+    default: `${siteConfig.name} - Download Video TikTok Tanpa Watermark Gratis`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    'TikTok downloader',
-    'download TikTok',
-    'TikTok no watermark',
-    'free TikTok downloader',
-    'save TikTok video',
-    'TikTok video downloader',
-    'TikTok MP4',
-    'TikTok MP3',
-    'unduh TikTok',
-    'downloader TikTok tanpa watermark',
-    'simpan video TikTok',
+    'download video tiktok',
+    'download vt tanpa watermark',
+    'tiktok downloader indonesia',
+    'save tiktok lokal',
+    'download fyp tiktok',
+    'unduh tiktok HD',
+    'tiktok mp4',
+    'tiktok mp3',
+    'simpan video tiktok',
+    'snaptik alternatif',
+    'tiktok saver id'
   ],
   authors: [
     {
-      name: 'Your Name', // Ganti dengan nama Anda atau nama perusahaan
+      name: 'SaveTok ID Team',
       url: siteConfig.url,
     },
   ],
-  creator: 'Your Name', // Ganti dengan nama Anda atau nama perusahaan
+  creator: 'SaveTok ID Team',
 
   openGraph: {
     type: 'website',
@@ -86,9 +86,9 @@ export const viewport: Viewport = {
 
 import { Inter, Source_Code_Pro, Outfit } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const sourceCodePro = Source_Code_Pro({ subsets: ["latin"], variable: "--font-source-code-pro" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const sourceCodePro = Source_Code_Pro({ subsets: ["latin"], variable: "--font-source-code-pro", display: "swap" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit", display: "swap" });
 
 export default function RootLayout({
   children,
@@ -110,7 +110,7 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className="flex-grow">
+              <div className="grow">
                 {children}
               </div>
               <Toaster />

@@ -67,7 +67,7 @@ export default function Home() {
             }
           }
         }}
-        className="container mx-auto px-4 py-8 md:py-12 flex-grow"
+        className="container mx-auto px-4 py-8 md:py-12 grow"
       >
         <div className="max-w-2xl mx-auto">
           <motion.div
@@ -77,7 +77,7 @@ export default function Home() {
             }}
             className="text-center mb-10"
           >
-            <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-gradient bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold font-headline mb-4 bg-linear-to-r from-primary via-accent to-primary bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
               {t('home.title')}
             </h1>
             <p className="text-muted-foreground md:text-xl font-light">
@@ -139,6 +139,20 @@ export default function Home() {
           >
             {t('home.downloadCount', { count: downloadCount })}
           </motion.div>
+
+          {/* Semantic SEO Block */}
+          <div className="sr-only">
+            <h2>Cara Download Video TikTok Tanpa Watermark (HD)</h2>
+            <p>SaveTok ID adalah tool gratis terbaik untuk download VT atau video TikTok favorit Anda tanpa watermark dalam kualitas HD (MP4) atau format audio (MP3). Cukup paste link, klik download, dan nikmati videonya secara offline.</p>
+            <h3>Fitur Keunggulan SaveTok ID</h3>
+            <ul>
+              <li>Download TikTok Tanpa Watermark</li>
+              <li>Simpan Audio MP3 TikTok</li>
+              <li>Akses Gratis dan Tanpa Batasan</li>
+              <li>Kecepatan Unduhan Tinggi untuk Pengguna Indonesia</li>
+            </ul>
+          </div>
+
         </div>
       </motion.main>
       <Footer />
