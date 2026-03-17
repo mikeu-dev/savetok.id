@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { DownloadCloud, Loader2, Sparkles } from 'lucide-react';
+import { DownloadCloud, Loader2, ClipboardPaste } from 'lucide-react';
 import { useLanguage } from '@/hooks/use-language';
 
 interface InputFormProps {
@@ -58,20 +58,38 @@ export const InputForm: FC<InputFormProps> = ({ onSubmit, isLoading }) => {
                       <Input
                         placeholder="https://www.tiktok.com/@user/video/..."
                         {...field}
-                        className="h-14 pl-6 pr-36 text-lg bg-card border-transparent shadow-xl focus-visible:ring-2 focus-visible:ring-primary/50"
+                        className="h-14 pl-6 pr-44 sm:pr-64 text-lg bg-card border-transparent shadow-xl focus-visible:ring-2 focus-visible:ring-primary/50 truncate"
                       />
-                      <Button
-                        type="submit"
-                        disabled={isLoading}
-                        className="absolute top-1.5 right-1.5 h-11 px-6 shadow-md transition-all hover:scale-105 active:scale-95"
-                      >
-                        {isLoading ? (
-                          <Loader2 className="h-5 w-5 animate-spin" />
-                        ) : (
-                          <DownloadCloud className="h-5 w-5" />
-                        )}
-                        <span className="ml-2 font-semibold hidden sm:inline">{t('form.button')}</span>
-                      </Button>
+                      <div className="absolute top-1.5 right-1.5 flex gap-2">
+                        <Button
+                          type="button"
+                          variant="secondary"
+                          onClick={async () => {
+                            try {
+                              const text = await navigator.clipboard.readText();
+                              form.setValue('url', text);
+                            } catch (err) {
+                              console.error('Failed to read clipboard', err);
+                            }
+                          }}
+                          className="h-11 px-3 sm:px-4 shadow-sm transition-all hover:scale-105 active:scale-95"
+                          title="Tempel dari Clipboard"
+                        >
+                          <ClipboardPaste className="h-5 w-5" />
+                        </Button>
+                        <Button
+                          type="submit"
+                          disabled={isLoading}
+                          className="h-11 px-6 shadow-md transition-all hover:scale-105 active:scale-95"
+                        >
+                          {isLoading ? (
+                            <Loader2 className="h-5 w-5 animate-spin" />
+                          ) : (
+                            <DownloadCloud className="h-5 w-5" />
+                          )}
+                          <span className="ml-2 font-semibold hidden sm:inline">{t('form.button')}</span>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </FormControl>
