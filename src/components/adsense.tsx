@@ -42,32 +42,13 @@ const AdSense: FC<AdSenseProps> = ({
 
   if (!isMounted) {
     return (
-      <div className={cn("flex justify-center items-center text-muted-foreground text-sm bg-muted/50 rounded-lg border border-dashed h-24", className)}>
-        <span className="p-4">Loading Ad...</span>
-      </div>
+      <div className={cn("min-h-[100px]", className)}></div>
     );
   }
 
   return (
     <div className={cn("relative flex justify-center items-center overflow-hidden min-h-[100px] rounded-lg", className)} key={pathname + adSlot}>
-      {/* Internal Ad / Fallback */}
-      <Link
-        href="/pricing"
-        className="absolute inset-0 z-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-between px-6 hover:opacity-95 transition-opacity"
-        onClick={() => {
-          console.log("Internal Ad Clicked: Upgrade to Pro");
-          // Here you would add your analytics call, e.g.
-          // analytics.track('ad_click', { type: 'internal', slot: adSlot });
-        }}
-      >
-        <div className="flex flex-col text-white">
-          <span className="font-bold text-lg">Upgrade to Pro</span>
-          <span className="text-xs text-white/80">Ad-free, Unlimited History & High Speed</span>
-        </div>
-        <div className="bg-white text-purple-600 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm whitespace-nowrap">
-          Get Started
-        </div>
-      </Link>
+
 
       {/* External AdSense */}
       <ins
