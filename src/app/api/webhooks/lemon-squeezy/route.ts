@@ -13,11 +13,12 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'Server config missing' }, { status: 500 });
         }
 
-        // Verify signature
+        // Verify signature safely
         const hmac = crypto.createHmac('sha256', secret);
-        const digest = hmac.update(rawBody).digest('hex');
+        const digest = Buffer.from(hmac.update(rawBody).digest('hex'), 'utf8');
+        const signatureBuffer = Buffer.from(signature, 'utf8');
 
-        if (digest !== signature) {
+        if (digest.length !== signatureBuffer.length || !crypto.timingSafeEqual(digest, signatureBuffer)) {
             return NextResponse.json({ error: 'Invalid signature' }, { status: 401 });
         }
 
@@ -25,8 +26,6 @@ export async function POST(request: Request) {
         const eventName = payload.meta.event_name;
         const customData = payload.meta.custom_data;
         const userId = customData?.user_id;
-
-        console.log(`Received webhook: ${eventName} for user: ${userId}`);
 
         if (eventName === 'subscription_created' || eventName === 'subscription_updated') {
             if (userId) {
@@ -37,7 +36,6 @@ export async function POST(request: Request) {
                     subscriptionStatus: payload.data.attributes.status,
                     updatedAt: new Date().toISOString()
                 });
-                console.log(`Updated user ${userId} to PRO`);
             }
         } else if (eventName === 'subscription_cancelled' || eventName === 'subscription_expired') {
             if (userId) {
@@ -46,7 +44,6 @@ export async function POST(request: Request) {
                     subscriptionStatus: payload.data.attributes.status,
                     updatedAt: new Date().toISOString()
                 });
-                console.log(`Downgraded user ${userId} to FREE`);
             }
         }
 

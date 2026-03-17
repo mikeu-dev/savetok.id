@@ -16,6 +16,8 @@ if (!admin.apps.length) {
     } else {
         // Fallback or warning
         console.warn('FIREBASE_SERVICE_ACCOUNT_KEY not found. Admin features may fail.');
+        // Note: For production (Vercel/App Hosting), ensure this environment variable 
+        // is set as a strict, single-line JSON string with no unescaped newlines.
         // If running in Google Cloud environment (e.g. Cloud Run/Functions), default credentials might work:
         // admin.initializeApp(); 
     }
