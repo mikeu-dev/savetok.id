@@ -4,6 +4,7 @@
     "home.subtitle": "Paste a TikTok video link to download it without watermark. Watch a short ad to support us!",
     "home.downloadCount": "You have downloaded {count} videos. Thanks for your support!",
     "form.button": "Download",
+    "form.placeholder": "Paste video link here...",
     "form.error.url": "Please enter a valid URL.",
     "form.error.tiktokUrl": "Please enter a valid TikTok URL.",
     "result.thumbnailAlt": "Thumbnail for TikTok video: {title}",

@@ -56,7 +56,7 @@ export const InputForm: FC<InputFormProps> = ({ onSubmit, isLoading }) => {
                     <div className="absolute -inset-0.5 bg-linear-to-r from-primary to-accent rounded-lg blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative">
                       <Input
-                        placeholder="https://www.tiktok.com/@user/video/..."
+                        placeholder={t('form.placeholder')}
                         {...field}
                         className="h-14 pl-6 pr-44 sm:pr-64 text-lg bg-card border-transparent shadow-xl focus-visible:ring-2 focus-visible:ring-primary/50 truncate"
                       />

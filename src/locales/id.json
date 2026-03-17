@@ -4,6 +4,7 @@
     "home.subtitle": "Tempel tautan video TikTok untuk mengunduhnya tanpa tanda air. Tonton iklan singkat untuk mendukung kami!",
     "home.downloadCount": "Anda telah mengunduh {count} video. Terima kasih atas dukungan Anda!",
     "form.button": "Download",
+    "form.placeholder": "Tempel tautan video disini...",
     "form.error.url": "Silakan masukkan URL yang valid.",
     "form.error.tiktokUrl": "Silakan masukkan URL TikTok yang valid.",
     "result.thumbnailAlt": "Gambar mini untuk video TikTok: {title}",
