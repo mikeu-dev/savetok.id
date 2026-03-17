@@ -44,5 +44,10 @@
     "faq.q3.q": "Apakah video disimpan di server kalian?",
     "faq.q3.a": "Tidak. Kami tidak menyimpan video apa pun di server kami. Semua video diunduh langsung dari server TikTok.",
     "faq.q4.q": "Di mana file video tersimpan setelah diunduh?",
-    "faq.q4.a": "File biasanya tersimpan di folder 'Downloads' pada PC, Mac, Android, atau iOS."
+    "faq.q4.a": "File biasanya tersimpan di folder 'Downloads' pada PC, Mac, Android, atau iOS.",
+    "footer.links.home": "Beranda",
+    "footer.links.privacy": "Kebijakan Privasi",
+    "footer.links.tos": "Syarat & Ketentuan",
+    "footer.links.contact": "Hubungi Kami",
+    "footer.tagline": "Pengunduh video TikTok tercepat tanpa watermark."
 }

@@ -44,5 +44,10 @@
     "faq.q3.q": "Are videos stored on your servers?",
     "faq.q3.a": "No. We do not store any videos on our servers. All videos are downloaded directly from TikTok's servers.",
     "faq.q4.q": "Where are the video files saved after downloading?",
-    "faq.q4.a": "Files are usually saved in the 'Downloads' folder on your PC, Mac, Android, or iOS device."
+    "faq.q4.a": "Files are usually saved in the 'Downloads' folder on your PC, Mac, Android, or iOS device.",
+    "footer.links.home": "Home",
+    "footer.links.privacy": "Privacy Policy",
+    "footer.links.tos": "Terms of Service",
+    "footer.links.contact": "Contact Us",
+    "footer.tagline": "The fastest TikTok downloader without watermark."
 }

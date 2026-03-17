@@ -73,7 +73,7 @@ export default function Home() {
             }
           }
         }}
-        className="container mx-auto px-4 py-8 md:py-12 grow"
+        className="container mx-auto px-4 pt-8 md:pt-12 grow flex flex-col justify-start"
       >
         <div className="max-w-2xl mx-auto">
           <motion.div
@@ -150,7 +150,7 @@ export default function Home() {
               hidden: { opacity: 0 },
               show: { opacity: 1 }
             }}
-            className="mt-20 space-y-24"
+            className="mt-16 space-y-16 pb-12"
           >
             {/* Services Section */}
             <section>
