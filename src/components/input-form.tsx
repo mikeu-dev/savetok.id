@@ -53,7 +53,7 @@ export const InputForm: FC<InputFormProps> = ({ onSubmit, isLoading }) => {
                 <FormLabel className="sr-only">TikTok URL</FormLabel>
                 <FormControl>
                   <div className="relative group">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                    <div className="absolute -inset-0.5 bg-linear-to-r from-primary to-accent rounded-lg blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative">
                       <Input
                         placeholder="https://www.tiktok.com/@user/video/..."
@@ -68,7 +68,7 @@ export const InputForm: FC<InputFormProps> = ({ onSubmit, isLoading }) => {
                         {isLoading ? (
                           <Loader2 className="h-5 w-5 animate-spin" />
                         ) : (
-                          <Sparkles className="h-5 w-5" />
+                          <DownloadCloud className="h-5 w-5" />
                         )}
                         <span className="ml-2 font-semibold hidden sm:inline">{t('form.button')}</span>
                       </Button>
