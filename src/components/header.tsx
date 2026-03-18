@@ -28,7 +28,7 @@ export function Header() {
       <div className="container mx-auto px-4 flex items-center justify-between h-16 text-foreground dark:text-white">
         <div className="flex items-center gap-2">
           <Image src="/logo.png" alt="SaveTok.id Logo" width={32} height={32} className="rounded-lg w-8 h-8 object-contain" />
-          <h1 className="text-xl font-bold font-headline tracking-tight text-foreground dark:text-white">{t('header.title')}</h1>
+          <span className="text-xl font-bold font-headline tracking-tight text-foreground dark:text-white">{t('header.title')}</span>
         </div>
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="icon" onClick={toggleLanguage} aria-label="Toggle language">

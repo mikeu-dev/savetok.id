@@ -240,18 +240,86 @@ export default function Home() {
             </section>
           </motion.div>
 
-          {/* Semantic SEO Block */}
-          <div className="sr-only">
-            <h2>Cara Download Video TikTok Tanpa Watermark (HD)</h2>
-            <p>SaveTok ID adalah tool gratis terbaik untuk download VT atau video TikTok favorit Anda tanpa watermark dalam kualitas HD (MP4) atau format audio (MP3). Cukup paste link, klik download, dan nikmati videonya secara offline.</p>
-            <h3>Fitur Keunggulan SaveTok ID</h3>
-            <ul>
-              <li>Download TikTok Tanpa Watermark</li>
-              <li>Simpan Audio MP3 TikTok</li>
-              <li>Akses Gratis dan Tanpa Batasan</li>
-              <li>Kecepatan Unduhan Tinggi untuk Pengguna Indonesia</li>
-            </ul>
-          </div>
+          {/* Semantic SEO Block (Visible & Structured) */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              show: { opacity: 1 }
+            }}
+            className="mt-16 pt-10 border-t border-border/50 px-4 sm:px-0 pb-8"
+          >
+            <article className="max-w-3xl mx-auto text-muted-foreground text-sm sm:text-base leading-relaxed space-y-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground">Pilihan Terbaik untuk Unduh Video TikTok Kualitas HD</h2>
+              <p>
+                <strong>SaveTok.id</strong> adalah tool gratis terbaik untuk download VT atau video TikTok favorit Anda tanpa watermark dalam kualitas HD (MP4) atau format audio (MP3). Cukup paste link, klik download, dan nikmati videonya secara offline tanpa perlu menginstal aplikasi tambahan.
+              </p>
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground pt-4">Fitur Keunggulan SaveTok.id</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Download TikTok Tanpa Watermark kualitas jernih</li>
+                <li>Simpan Audio MP3 TikTok (Sound/Musik)</li>
+                <li>Akses Gratis dan Tanpa Batasan pemakaian</li>
+                <li>Kecepatan Unduhan Tinggi khusus untuk Pengguna di Indonesia</li>
+                <li>Mendukung unduhan format Slide Foto (Stories) TikTok</li>
+              </ul>
+            </article>
+          </motion.div>
+
+          {/* Schema Markup JSON-LD */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@graph": [
+                  {
+                    "@type": "WebApplication",
+                    "name": "SaveTok.id",
+                    "url": "https://savetok.id",
+                    "applicationCategory": "MultimediaApplication",
+                    "operatingSystem": "All",
+                    "description": t('home.subtitle')
+                  },
+                  {
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                      {
+                        "@type": "Question",
+                        "name": t('faq.q1.q'),
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": t('faq.q1.a')
+                        }
+                      },
+                      {
+                        "@type": "Question",
+                        "name": t('faq.q2.q'),
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": t('faq.q2.a')
+                        }
+                      },
+                      {
+                        "@type": "Question",
+                        "name": t('faq.q3.q'),
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": t('faq.q3.a')
+                        }
+                      },
+                      {
+                        "@type": "Question",
+                        "name": t('faq.q4.q'),
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": t('faq.q4.a')
+                        }
+                      }
+                    ]
+                  }
+                ]
+              })
+            }}
+          />
 
         </div>
       </motion.main>
