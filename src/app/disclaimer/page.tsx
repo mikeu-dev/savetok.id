@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Disclaimer',
-  description: 'Pernyataan Penyangkalan (Disclaimer) untuk pengguna SaveTok.id',
+  description: 'Pernyataan Penyangkalan (Disclaimer) untuk pengguna SaveTok',
 };
 
 export default function DisclaimerPage() {
@@ -16,7 +16,7 @@ export default function DisclaimerPage() {
         
         <div className="prose dark:prose-invert max-w-none space-y-6">
           <p>
-            Dengan menggunakan situs SaveTok.id, Anda membaca, mengerti, dan menyetujui pernyataan berikut:
+            Dengan menggunakan situs SaveTok, Anda membaca, mengerti, dan menyetujui pernyataan berikut:
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Afiliasi</h2>
@@ -29,7 +29,7 @@ export default function DisclaimerPage() {
             Alat yang kami sediakan disajikan untuk mempermudah akses bagi kepentingan personal dan bukan tujuan komersialisasi. Anda tidak dibenarkan mendistribusikan secara komersil konten di luar hak paten kecuali Anda sudah menghubungi serta memperoleh izin lisan maupun tertulis dari sang pemilik konten (creator).
           </p>
           <p>
-            Jika Anda melanggar Hak Cipta, Anda bertanggung jawab secara mandiri atas perbuatan tersebut di muka hukum. SaveTok.id menolak keras segala tuntutan yang mungkin terjadi di masa mendatang sebagai akibat di luar platform kami.
+            Jika Anda melanggar Hak Cipta, Anda bertanggung jawab secara mandiri atas perbuatan tersebut di muka hukum. SaveTok menolak keras segala tuntutan yang mungkin terjadi di masa mendatang sebagai akibat di luar platform kami.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Konten yang Diunduh</h2>

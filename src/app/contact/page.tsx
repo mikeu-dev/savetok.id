@@ -5,7 +5,7 @@ import { Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Hubungi tim SaveTok.id untuk pertanyaan dan masukan.',
+  description: 'Hubungi tim SaveTok untuk pertanyaan dan masukan.',
 };
 
 export default function ContactUsPage() {
@@ -28,8 +28,8 @@ export default function ContactUsPage() {
             <p className="text-center text-muted-foreground m-0">
               Silahkan berkirim pesan elektronik ke alamat di bawah ini. Kami akan berusaha merespons dalam waktu 2x24 jam kerja.
             </p>
-            <a href="mailto:admin@savetok.id" className="text-2xl font-bold text-primary hover:underline m-0">
-              admin@savetok.id
+            <a href="mailto:admin@savetok.com" className="text-2xl font-bold text-primary hover:underline m-0">
+              admin@savetok.com
             </a>
           </div>
 

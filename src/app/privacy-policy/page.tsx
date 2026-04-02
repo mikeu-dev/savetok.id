@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Kebijakan Privasi terkait informasi yang dikumpulkan oleh SaveTok.id',
+  description: 'Kebijakan Privasi terkait informasi yang dikumpulkan oleh SaveTok',
 };
 
 export default function PrivacyPolicyPage() {
@@ -16,16 +16,16 @@ export default function PrivacyPolicyPage() {
         
         <div className="prose dark:prose-invert max-w-none space-y-6">
           <p>
-            Di SaveTok.id, dapat diakses di https://savetok.id, salah satu prioritas utama kami adalah privasi pengunjung. Dokumen Kebijakan Privasi ini berisi jenis informasi yang dikumpulkan dan dicatat oleh SaveTok.id dan bagaimana kami menggunakannya.
+            Di SaveTok, dapat diakses di https://savetok.com, salah satu prioritas utama kami adalah privasi pengunjung. Dokumen Kebijakan Privasi ini berisi jenis informasi yang dikumpulkan dan dicatat oleh SaveTok dan bagaimana kami menggunakannya.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Informasi yang Kami Kumpulkan</h2>
           <p>
-            Kami tidak mengharuskan pengguna membuat akun atau memberikan informasi identitas pribadi untuk menggunakan sebagian besar layanan kami. Namun, saat Anda menggunakan SaveTok.id, kami mungkin mengumpulkan:
+            Kami tidak mengharuskan pengguna membuat akun atau memberikan informasi identitas pribadi untuk menggunakan sebagian besar layanan kami. Namun, saat Anda menggunakan SaveTok, kami mungkin mengumpulkan:
           </p>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Log Files:</strong> Proses standar log web, yang mencakup alamat Internet Protocol (IP), jenis browser, Internet Service Provider (ISP), cap waktu (tanggal dan waktu), halaman rujukan/keluar, dan jumlah klik.</li>
-            <li><strong>Cookies dan Web Beacons:</strong> Sama seperti situs web lainnya, SaveTok.id menggunakan "cookie" untuk menyimpan preferensi pengunjung, dan melacak halaman mana yang dikunjungi pengguna.</li>
+            <li><strong>Cookies dan Web Beacons:</strong> Sama seperti situs web lainnya, SaveTok menggunakan "cookie" untuk menyimpan preferensi pengunjung, dan melacak halaman mana yang dikunjungi pengguna.</li>
           </ul>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Google AdSense dan Pihak Ketiga</h2>

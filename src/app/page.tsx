@@ -251,9 +251,9 @@ export default function Home() {
             <article className="max-w-3xl mx-auto text-muted-foreground text-sm sm:text-base leading-relaxed space-y-4">
               <h2 className="text-xl sm:text-2xl font-bold text-foreground">Pilihan Terbaik untuk Unduh Video TikTok Kualitas HD</h2>
               <p>
-                <strong>SaveTok.id</strong> adalah tool gratis terbaik untuk download VT atau video TikTok favorit Anda tanpa watermark dalam kualitas HD (MP4) atau format audio (MP3). Cukup paste link, klik download, dan nikmati videonya secara offline tanpa perlu menginstal aplikasi tambahan.
+                <strong>SaveTok</strong> adalah tool gratis terbaik untuk download VT atau video TikTok favorit Anda tanpa watermark dalam kualitas HD (MP4) atau format audio (MP3). Cukup paste link, klik download, dan nikmati videonya secara offline tanpa perlu menginstal aplikasi tambahan.
               </p>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground pt-4">Fitur Keunggulan SaveTok.id</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground pt-4">Fitur Keunggulan SaveTok</h3>
               <ul className="list-disc pl-5 space-y-2">
                 <li>Download TikTok Tanpa Watermark kualitas jernih</li>
                 <li>Simpan Audio MP3 TikTok (Sound/Musik)</li>
@@ -273,8 +273,8 @@ export default function Home() {
                 "@graph": [
                   {
                     "@type": "WebApplication",
-                    "name": "SaveTok.id",
-                    "url": "https://savetok.id",
+                    "name": "SaveTok",
+                    "url": "https://savetok.com",
                     "applicationCategory": "MultimediaApplication",
                     "operatingSystem": "All",
                     "description": t('home.subtitle')

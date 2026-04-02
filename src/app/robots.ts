@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://savetok.id';
+  const baseUrl = 'https://savetok.com';
 
   return {
     rules: {

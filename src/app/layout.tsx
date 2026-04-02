@@ -7,12 +7,12 @@ import { LanguageProvider } from '@/components/providers/language-provider';
 import { AuthProvider } from '@/components/auth-provider';
 
 const siteConfig = {
-  name: 'SaveTok.id',
-  url: 'https://savetok.id', // Menunggu domain resmi, sementara pakai ini
+  name: 'SaveTok',
+  url: 'https://savetok.com', // Menunggu domain resmi, sementara pakai ini
   description: 'Download video TikTok tanpa watermark gratis kualitas HD. Simpan VT, MP4, atau lagu MP3 dengan cepat, aman, dan tanpa biaya berlangganan.',
-  ogImage: 'https://savetok.id/og-image.png',
+  ogImage: 'https://savetok.com/og-image.png',
   links: {
-    twitter: 'https://twitter.com/savetok_id',
+    twitter: 'https://twitter.com/savetok',
   },
 };
 
@@ -41,11 +41,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: 'SaveTok.id Team',
+      name: 'SaveTok Team',
       url: siteConfig.url,
     },
   ],
-  creator: 'SaveTok.id Team',
+  creator: 'SaveTok Team',
 
   openGraph: {
     type: 'website',
