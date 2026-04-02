@@ -223,8 +223,8 @@ export function LegalContent({ type }: LegalContentProps) {
           <p className="text-center text-muted-foreground m-0">
             Please send an electronic message to the address below. We will try to respond within 2x24 business hours.
           </p>
-          <a href="mailto:admin@savetok.com" className="text-2xl font-bold text-primary hover:underline m-0">
-            admin@savetok.com
+          <a href={`mailto:${process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@savetok.com'}`} className="text-2xl font-bold text-primary hover:underline m-0">
+            {process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@savetok.com'}
           </a>
         </div>
 
@@ -246,8 +246,8 @@ export function LegalContent({ type }: LegalContentProps) {
           <p className="text-center text-muted-foreground m-0">
             Silahkan berkirim pesan elektronik ke alamat di bawah ini. Kami akan berusaha merespons dalam waktu 2x24 jam kerja.
           </p>
-          <a href="mailto:admin@savetok.com" className="text-2xl font-bold text-primary hover:underline m-0">
-            admin@savetok.com
+          <a href={`mailto:${process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@savetok.com'}`} className="text-2xl font-bold text-primary hover:underline m-0">
+            {process.env.NEXT_PUBLIC_ADMIN_EMAIL || 'admin@savetok.com'}
           </a>
         </div>
 
