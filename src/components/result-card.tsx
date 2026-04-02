@@ -29,6 +29,7 @@ export const ResultCard: FC<ResultCardProps> = ({ videoData, onDownload }) => {
   const [isZipping, setIsZipping] = useState(false);
   const { t } = useLanguage();
 
+  const isSlideshow = videoData.images && videoData.images.length > 0;
   const videoUrl = videoData.hdplay || videoData.play;
 
   const handleDownloadClick = (url: string, type: string) => {
@@ -150,8 +151,8 @@ export const ResultCard: FC<ResultCardProps> = ({ videoData, onDownload }) => {
             </div>
           )}
         </CardContent>
-        <CardFooter className="flex flex-col sm:flex-row gap-3 px-4 sm:px-6 pt-2 pb-6">
-          {videoUrl ? (
+        <CardFooter className="flex flex-col sm:flex-row flex-wrap gap-3 px-4 sm:px-6 pt-2 pb-6">
+          {videoUrl && (
             <Button
               className="w-full sm:w-auto flex-1 font-semibold h-12 text-base shadow-lg hover:shadow-primary/25 transition-all hover:-translate-y-0.5"
               size="lg"
@@ -160,30 +161,13 @@ export const ResultCard: FC<ResultCardProps> = ({ videoData, onDownload }) => {
               <Download className="mr-2 h-5 w-5" />
               {t('result.downloadMp4')}
             </Button>
-          ) : (
-            videoData.images && (
-              <Button
-                className="w-full sm:w-auto flex-1 font-semibold h-12 shadow-lg hover:shadow-primary/25 transition-all hover:-translate-y-0.5"
-                size="lg"
-                onClick={handleDownloadZip}
-                disabled={isZipping}
-              >
-                {isZipping ? (
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                ) : (
-                  <Download className="mr-2 h-5 w-5" />
-                )}
-                {isZipping ? t('result.zipping') : t('result.downloadZip')}
-              </Button>
-            )
           )}
 
-          {/* If there are images AND a video (rare but possible), allow ZIP download too */}
-          {videoUrl && videoData.images && videoData.images.length > 0 && (
+          {isSlideshow && (
             <Button
-              className="w-full sm:w-auto flex-1 font-semibold h-12"
+              className="w-full sm:w-auto flex-1 font-semibold h-12 shadow-lg hover:shadow-primary/25 transition-all hover:-translate-y-0.5"
               size="lg"
-              variant="secondary"
+              variant={videoUrl ? 'secondary' : 'default'}
               onClick={handleDownloadZip}
               disabled={isZipping}
             >
@@ -192,9 +176,11 @@ export const ResultCard: FC<ResultCardProps> = ({ videoData, onDownload }) => {
               ) : (
                 <Images className="mr-2 h-5 w-5" />
               )}
-              {isZipping ? t('result.zipping') : t('result.downloadZipSecondary')}
+              {isZipping ? t('result.zipping') : t(videoUrl ? 'result.downloadZipSecondary' : 'result.downloadZip')}
             </Button>
           )}
+
+
 
           {videoData.music && (
             <Button
