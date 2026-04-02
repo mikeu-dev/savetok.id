@@ -65,19 +65,20 @@ export function AccessibilityWidget() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-50">
+    <div className="fixed top-1/2 -translate-y-1/2 left-0 z-50 -translate-x-[60%] hover:translate-x-0 transition-transform duration-300 ease-out">
       <Popover>
         <PopoverTrigger asChild>
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full shadow-lg bg-background border-2 border-primary/20 hover:border-primary/50 text-foreground h-11 w-11 md:h-12 md:w-12 transition-transform hover:-translate-y-1 active:scale-95"
+            className="rounded-r-2xl rounded-l-none border-l-0 shadow-[4px_0_15px_rgba(0,0,0,0.15)] bg-background border-2 border-primary/20 hover:border-primary/50 text-foreground h-12 w-12 md:h-14 md:w-14 items-center justify-end pr-2 md:pr-3 pl-10 md:pl-12 ml-5 md:ml-6 hover:ml-0 cursor-pointer transition-all duration-300 ease-out"
             aria-label="Accessibility options"
+            title="Accessibility options"
           >
             <Accessibility className="h-5 w-5 md:h-6 md:w-6" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-72 p-0 rounded-xl overflow-hidden glass border-white/20 dark:border-white/10" align="start" sideOffset={16}>
+        <PopoverContent className="w-72 p-0 rounded-xl overflow-hidden glass border-white/20 dark:border-white/10" align="start" side="right" sideOffset={16}>
           <div className="bg-primary/5 border-b p-4 flex items-center justify-between">
             <div className="flex items-center gap-2 text-primary font-semibold">
               <Settings2 className="w-5 h-5" />
