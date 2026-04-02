@@ -6,11 +6,13 @@ import { cn } from '@/lib/utils';
 import { LanguageProvider } from '@/components/providers/language-provider';
 import { AuthProvider } from '@/components/auth-provider';
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
 const siteConfig = {
   name: 'SaveTok',
-  url: 'https://savetok.com', // Menunggu domain resmi, sementara pakai ini
+  url: baseUrl, // Menunggu domain resmi, sementara pakai ini
   description: 'Download video TikTok tanpa watermark gratis kualitas HD. Simpan VT, MP4, atau lagu MP3 dengan cepat, aman, dan tanpa biaya berlangganan.',
-  ogImage: 'https://savetok.com/og-image.png',
+  ogImage: `${baseUrl}/og-image.png`,
   links: {
     twitter: 'https://twitter.com/savetok',
   },

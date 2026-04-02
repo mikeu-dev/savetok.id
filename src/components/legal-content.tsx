@@ -14,7 +14,7 @@ export function LegalContent({ type }: LegalContentProps) {
     return language === 'en' ? (
       <div className="prose dark:prose-invert max-w-none space-y-6">
         <p>
-          At SaveTok, accessible from https://savetok.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by SaveTok and how we use it.
+          At SaveTok, accessible from {process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by SaveTok and how we use it.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">Information We Collect</h2>
@@ -44,7 +44,7 @@ export function LegalContent({ type }: LegalContentProps) {
     ) : (
       <div className="prose dark:prose-invert max-w-none space-y-6">
         <p>
-          Di SaveTok, dapat diakses di https://savetok.com, salah satu prioritas utama kami adalah privasi pengunjung. Dokumen Kebijakan Privasi ini berisi jenis informasi yang dikumpulkan dan dicatat oleh SaveTok dan bagaimana kami menggunakannya.
+          Di SaveTok, dapat diakses di {process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}, salah satu prioritas utama kami adalah privasi pengunjung. Dokumen Kebijakan Privasi ini berisi jenis informasi yang dikumpulkan dan dicatat oleh SaveTok dan bagaimana kami menggunakannya.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">Informasi yang Kami Kumpulkan</h2>

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Anda dapat menambahkan URL blog atau URL dinamis Anda di sini juga ke depannya
-  const baseUrl = 'https://savetok.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
   return [
     {

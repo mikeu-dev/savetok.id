@@ -272,7 +272,7 @@ export default function Home() {
                   {
                     "@type": "WebApplication",
                     "name": "SaveTok",
-                    "url": "https://savetok.com",
+                    "url": process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
                     "applicationCategory": "MultimediaApplication",
                     "operatingSystem": "All",
                     "description": t('home.subtitle')
