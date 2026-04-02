@@ -4,7 +4,6 @@ import { useState, useEffect, FC } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import AdSense from './adsense';
 import { Download, Hourglass, Loader2 } from 'lucide-react';
 import { useLanguage } from '@/hooks/use-language';
 
@@ -107,10 +106,6 @@ export const DownloadModal: FC<DownloadModalProps> = ({ open, onOpenChange, down
         </DialogHeader>
 
         <div className="flex flex-col gap-6">
-          {/* Ad Area with proper container */}
-          <div className="relative rounded-xl overflow-hidden flex items-center justify-center">
-            <AdSense adSlot="9876543210" className="w-full text-center" />
-          </div>
 
           {/* Status & Controls Area */}
           <div className="space-y-4">
