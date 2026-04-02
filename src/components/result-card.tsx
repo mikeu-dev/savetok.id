@@ -68,7 +68,7 @@ export const ResultCard: FC<ResultCardProps> = ({ videoData, onDownload }) => {
             {videoData.images && (
               <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary/10 text-primary hover:bg-primary/20">
                 <Images className="w-3 h-3 mr-1" />
-                {videoData.images.length} Slides
+                {t('result.slides', { count: videoData.images.length })}
               </span>
             )}
           </CardDescription>
@@ -108,9 +108,9 @@ export const ResultCard: FC<ResultCardProps> = ({ videoData, onDownload }) => {
               <div className="flex items-center justify-between px-1">
                 <h3 className="font-semibold text-lg flex items-center gap-2">
                   <Images className="w-5 h-5 text-primary" />
-                  Photo Slides
+                  {t('result.photoSlides')}
                 </h3>
-                <span className="text-xs text-muted-foreground">{videoData.images.length} images</span>
+                <span className="text-xs text-muted-foreground">{t('result.imagesCount', { count: videoData.images.length })}</span>
               </div>
 
               <div className="relative px-4 sm:px-12 py-2">
@@ -131,7 +131,7 @@ export const ResultCard: FC<ResultCardProps> = ({ videoData, onDownload }) => {
                         >
                           <Image
                             src={img}
-                            alt={`Slide ${idx + 1}`}
+                            alt={t('result.slideNum', { num: idx + 1 })}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-110"
                             sizes="(max-width: 768px) 50vw, 25vw"
@@ -173,7 +173,7 @@ export const ResultCard: FC<ResultCardProps> = ({ videoData, onDownload }) => {
                 ) : (
                   <Download className="mr-2 h-5 w-5" />
                 )}
-                {isZipping ? 'Zipping...' : 'Download All Images (ZIP)'}
+                {isZipping ? t('result.zipping') : t('result.downloadZip')}
               </Button>
             )
           )}
@@ -192,7 +192,7 @@ export const ResultCard: FC<ResultCardProps> = ({ videoData, onDownload }) => {
               ) : (
                 <Images className="mr-2 h-5 w-5" />
               )}
-              {isZipping ? 'Zipping...' : 'Download Images (ZIP)'}
+              {isZipping ? t('result.zipping') : t('result.downloadZipSecondary')}
             </Button>
           )}
 

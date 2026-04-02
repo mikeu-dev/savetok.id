@@ -95,7 +95,7 @@ export const DownloadModal: FC<DownloadModalProps> = ({ open, onOpenChange, down
                 <div className="flex items-center justify-between text-sm font-medium">
                   <span className="flex items-center gap-2 text-primary">
                     <Hourglass className="h-4 w-4 animate-spin" />
-                    Waiting for ad...
+                    {t('modal.waiting')}
                   </span>
                   <span className="font-mono bg-primary/10 text-primary px-2 py-0.5 rounded text-xs">
                     {countdown}s

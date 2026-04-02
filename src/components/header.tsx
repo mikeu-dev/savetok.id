@@ -36,9 +36,9 @@ export function Header() {
         </a>
         <div className="flex flex-wrap items-center gap-1 sm:gap-2">
           {!isInstalled && isInstallable && (
-            <Button variant="default" size="sm" onClick={promptInstall} className="hidden sm:flex" aria-label="Install App">
+            <Button variant="default" size="sm" onClick={promptInstall} className="hidden sm:flex" aria-label={t('header.install')}>
               <Download className="w-4 h-4 mr-2" />
-              Install
+              {t('header.install')}
             </Button>
           )}
 
@@ -69,33 +69,33 @@ export function Header() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <UserIcon className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
+                  <span>{t('header.profile')}</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a href="/history" className="cursor-pointer">
                     <History className="mr-2 h-4 w-4" />
-                    <span>History</span>
+                    <span>{t('header.history')}</span>
                   </a>
                 </DropdownMenuItem>
 
                 <DropdownMenuItem asChild>
                   <a href="/admin" className="cursor-pointer">
                     <Tv2 className="mr-2 h-4 w-4" />
-                    <span>Admin</span>
+                    <span>{t('header.admin')}</span>
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={logout}>
                   <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
+                  <span>{t('header.logout')}</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
             <div className="flex items-center">
               {!isInstalled && isInstallable && (
-                <Button variant="default" size="sm" onClick={promptInstall} className="sm:hidden mr-1" aria-label="Install App">
-                  Install
+                <Button variant="default" size="sm" onClick={promptInstall} className="sm:hidden mr-1" aria-label={t('header.install')}>
+                  {t('header.install')}
                 </Button>
               )}
             </div>
