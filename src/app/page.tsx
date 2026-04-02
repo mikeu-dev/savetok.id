@@ -249,17 +249,15 @@ export default function Home() {
             className="mt-16 pt-10 border-t border-border/50 px-4 sm:px-0 pb-8"
           >
             <article className="max-w-3xl mx-auto text-muted-foreground text-sm sm:text-base leading-relaxed space-y-4">
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground">Pilihan Terbaik untuk Unduh Video TikTok Kualitas HD</h2>
-              <p>
-                <strong>SaveTok</strong> adalah tool gratis terbaik untuk download VT atau video TikTok favorit Anda tanpa watermark dalam kualitas HD (MP4) atau format audio (MP3). Cukup paste link, klik download, dan nikmati videonya secara offline tanpa perlu menginstal aplikasi tambahan.
-              </p>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground pt-4">Fitur Keunggulan SaveTok</h3>
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground">{t('seo.title')}</h2>
+              <p dangerouslySetInnerHTML={{ __html: t('seo.p1') }} />
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground pt-4">{t('seo.features.title')}</h3>
               <ul className="list-disc pl-5 space-y-2">
-                <li>Download TikTok Tanpa Watermark kualitas jernih</li>
-                <li>Simpan Audio MP3 TikTok (Sound/Musik)</li>
-                <li>Akses Gratis dan Tanpa Batasan pemakaian</li>
-                <li>Kecepatan Unduhan Tinggi khusus untuk Pengguna di Indonesia</li>
-                <li>Mendukung unduhan format Slide Foto (Stories) TikTok</li>
+                <li>{t('seo.features.1')}</li>
+                <li>{t('seo.features.2')}</li>
+                <li>{t('seo.features.3')}</li>
+                <li>{t('seo.features.4')}</li>
+                <li>{t('seo.features.5')}</li>
               </ul>
             </article>
           </motion.div>

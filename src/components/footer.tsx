@@ -13,10 +13,10 @@ export function Footer() {
             <p className="mt-1">{t('footer.disclaimer')}</p>
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-4 md:mt-0 font-medium">
-            <a href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</a>
-            <a href="/disclaimer" className="hover:text-primary transition-colors">Disclaimer</a>
-            <a href="/contact" className="hover:text-primary transition-colors">Contact Us</a>
+            <a href="/privacy-policy" className="hover:text-primary transition-colors">{t('footer.links.privacy')}</a>
+            <a href="/terms-of-service" className="hover:text-primary transition-colors">{t('footer.links.tos')}</a>
+            <a href="/disclaimer" className="hover:text-primary transition-colors">{t('footer.links.disclaimer')}</a>
+            <a href="/contact" className="hover:text-primary transition-colors">{t('footer.links.contact')}</a>
           </div>
         </div>
       </div>
