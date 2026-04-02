@@ -1,51 +1,49 @@
-# SaveTok (formerly TikTok AdGate Downloader)
+# SaveTok (`savetok.id`)
 
-This is a web application built with Next.js that allows users to download TikTok videos without a watermark for free. To support the service, users are required to watch a short advertisement before their download starts.
+**SaveTok** is a high-performance, production-ready Progressive Web Application (PWA) built with Next.js 16. It empowers users to download public TikTok videos in HD (MP4), audio (MP3), or image slides (ZIP) without watermarks. Integrated with native monetization capabilities, profound accessibility tools, and multi-language support.
 
-## ✨ Features
+## ✨ Core Features
 
-- **No Watermark**: Download TikTok videos in high quality without the watermark.
-- **MP4 & MP3 Options**: Choose to download the full video (MP4) or just the audio (MP3).
-- **Simple Interface**: Just paste the TikTok video URL and click "Fetch Video".
-- **Ad-Supported**: The service is kept free by displaying a brief ad within a modal before the download is initiated.
-- **Download Counter**: Tracks the number of videos you've downloaded using browser local storage.
-- **Responsive Design**: A clean and modern UI that works beautifully on desktop and mobile devices.
-- **Light & Dark Mode**: Switch between light and dark themes to suit your preference.
+- **Progressive Web App (PWA)**: Installable natively on iOS, Android, and desktop devices for maximized user retention.
+- **Watermark-Free Downloads**: Retrieve precise TikTok video streams without external watermarks, supporting MP4 and MP3 extractions.
+- **Image Slides Extraction**: Unique capability to parse TikTok photo slides and download them in a consolidated `.zip` format.
+- **Monetization Ready**: Strategically positioned Google AdSense hooks. Users watch short ads while downloads are being prepared.
+- **Internationalization (i18n)**: Fully localized in both English (`en`) and Indonesian (`id`) out of the box.
+- **WCAG Accessibility Widget**: Built-in floating widget for High Contrast mode, Large Text, and Link Highlighting.
+- **User Activity History**: Synchronized with Google Auth & Firebase, allowing returning users to track and redownload their recent queries.
+- **Google Analytics 4**: Pre-configured data streams to monitor audience behavior and bounce rates dynamically.
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Shadcn/ui](https://ui.shadcn.com/)
-- **AI/Backend**: [Genkit](https://firebase.google.com/docs/genkit) for server-side logic.
-- **Hosting**: Deployed on Firebase App Hosting.
+- **Framework**: Next.js 16 (App Router + Turbopack)
+- **Language**: TypeScript
+- **Styling UI/UX**: Tailwind CSS v4, Framer Motion, Shadcn UI
+- **Database & Auth**: Firebase / Firestore
+- **Deployment**: Vercel-ready & Firebase App Hosting compatible
 
 ## 🚀 Getting Started
 
-To get a local copy up and running, follow these simple steps.
+1. **Install Dependencies**
 
-### Prerequisites
-
-- Node.js (v18 or newer)
-- npm or yarn
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/your-username/your-repository-name.git
-   ```
-2. Navigate to the project directory
-   ```sh
-   cd your-repository-name
-   ```
-3. Install NPM packages
-   ```sh
+   ```bash
    npm install
    ```
-4. Run the development server
-   ```sh
+
+2. **Run Development Server**
+
+   ```bash
    npm run dev
    ```
-5. Open [http://localhost:9002](http://localhost:9002) with your browser to see the result.
+
+3. **Build for Production Environment**
+   ```bash
+   npm run build
+   ```
+
+Open `http://localhost:9002` to start exploring the application locally.
+
+## 📄 Legal & License
+
+Distributed under the **MIT License**. Authored by `mikeu-dev`.
+
+**Disclaimer**: This project is an independent tool and is **NOT AFFILIATED** with TikTok, ByteDance, or any of their corporate entities. The downloaded content remains the copyright of its original creators.
