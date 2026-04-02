@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { LanguageProvider } from '@/components/providers/language-provider';
 import { AuthProvider } from '@/components/auth-provider';
 import { PWARegistry } from '@/components/pwa-registry';
+import { ScrollToTop } from '@/components/scroll-to-top';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
@@ -120,6 +121,7 @@ export default function RootLayout({
                 {children}
               </div>
               <Toaster />
+              <ScrollToTop />
               <PWARegistry />
             </ThemeProvider>
           </AuthProvider>
