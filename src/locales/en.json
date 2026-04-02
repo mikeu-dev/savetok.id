@@ -66,5 +66,12 @@
     "history.empty.button": "Go Home",
     "history.download": "Download",
     "history.noTitle": "No Title",
-    "history.justNow": "Just now"
+    "history.justNow": "Just now",
+    "access.title": "Accessibility",
+    "access.largeText": "Large Text",
+    "access.largeTextDesc": "Scale up font size (110%)",
+    "access.highContrast": "High Contrast",
+    "access.highContrastDesc": "Sharpen visibility",
+    "access.highlightLinks": "Highlight Links",
+    "access.highlightLinksDesc": "Underline interactive elements"
 }

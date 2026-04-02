@@ -82,7 +82,7 @@ export function AccessibilityWidget() {
           <div className="bg-primary/5 border-b p-4 flex items-center justify-between">
             <div className="flex items-center gap-2 text-primary font-semibold">
               <Settings2 className="w-5 h-5" />
-              <span>Aksesibilitas</span>
+              <span>{t('access.title')}</span>
             </div>
             {(largeText || highContrast || highlightLinks) && (
               <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-destructive" onClick={resetAll} title="Reset">
@@ -98,8 +98,8 @@ export function AccessibilityWidget() {
                   <Type className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Teks Lebih Besar</p>
-                  <p className="text-xs text-muted-foreground">Perbesar ukuran (110%)</p>
+                  <p className="text-sm font-medium">{t('access.largeText')}</p>
+                  <p className="text-xs text-muted-foreground">{t('access.largeTextDesc')}</p>
                 </div>
               </div>
               <Switch checked={largeText} onCheckedChange={setLargeText} />
@@ -112,8 +112,8 @@ export function AccessibilityWidget() {
                   <Contrast className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Kontras Tinggi</p>
-                  <p className="text-xs text-muted-foreground">Tajamkan visibilitas</p>
+                  <p className="text-sm font-medium">{t('access.highContrast')}</p>
+                  <p className="text-xs text-muted-foreground">{t('access.highContrastDesc')}</p>
                 </div>
               </div>
               <Switch checked={highContrast} onCheckedChange={setHighContrast} />
@@ -126,8 +126,8 @@ export function AccessibilityWidget() {
                   <LinkIcon className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Tandai Tautan</p>
-                  <p className="text-xs text-muted-foreground">Garis bawahi tombol</p>
+                  <p className="text-sm font-medium">{t('access.highlightLinks')}</p>
+                  <p className="text-xs text-muted-foreground">{t('access.highlightLinksDesc')}</p>
                 </div>
               </div>
               <Switch checked={highlightLinks} onCheckedChange={setHighlightLinks} />

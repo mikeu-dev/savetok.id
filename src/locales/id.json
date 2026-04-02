@@ -66,5 +66,12 @@
     "history.empty.button": "Kembali ke Beranda",
     "history.download": "Unduh Ulang",
     "history.noTitle": "Tanpa Judul",
-    "history.justNow": "Baru Saja"
+    "history.justNow": "Baru Saja",
+    "access.title": "Aksesibilitas",
+    "access.largeText": "Teks Lebih Besar",
+    "access.largeTextDesc": "Perbesar ukuran (110%)",
+    "access.highContrast": "Kontras Tinggi",
+    "access.highContrastDesc": "Tajamkan visibilitas",
+    "access.highlightLinks": "Tandai Tautan",
+    "access.highlightLinksDesc": "Garis bawahi tombol"
 }
