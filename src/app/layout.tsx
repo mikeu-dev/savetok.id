@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: '@your_handle', // Ganti dengan handle Twitter Anda
+    creator: '@mikedehh', 
   },
   icons: {
     icon: '/logo.png',
