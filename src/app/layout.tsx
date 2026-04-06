@@ -26,9 +26,9 @@ const siteConfig = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  // alternates: {
+  //   canonical: siteConfig.url,
+  // },
   title: {
     default: `Download Video TikTok Tanpa Watermark (HD) - ${siteConfig.name}`,
     template: `%s | ${siteConfig.name}`,

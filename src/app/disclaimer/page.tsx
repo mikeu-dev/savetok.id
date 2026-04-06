@@ -6,6 +6,9 @@ import { LegalContent } from '@/components/legal-content';
 export const metadata: Metadata = {
   title: 'Disclaimer',
   description: 'Pernyataan Penyangkalan (Disclaimer) untuk pengguna TikDrop',
+  alternates: {
+    canonical: '/disclaimer',
+  },
 };
 
 export default function DisclaimerPage() {

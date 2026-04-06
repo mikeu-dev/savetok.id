@@ -6,6 +6,9 @@ import { LegalContent } from '@/components/legal-content';
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Syarat dan Ketentuan penggunaan layanan TikDrop',
+  alternates: {
+    canonical: '/terms-of-service',
+  },
 };
 
 export default function TermsOfServicePage() {

@@ -6,6 +6,9 @@ import { LegalContent } from '@/components/legal-content';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Kebijakan Privasi terkait informasi yang dikumpulkan oleh TikDrop',
+  alternates: {
+    canonical: '/privacy-policy',
+  },
 };
 
 export default function PrivacyPolicyPage() {
