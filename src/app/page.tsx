@@ -328,6 +328,29 @@ export default function Home() {
                     "description": t('home.subtitle')
                   },
                   {
+                    "@type": "Article",
+                    "headline": t('seo.article.title'),
+                    "description": t('seo.article.p1'),
+                    "author": {
+                      "@type": "Organization",
+                      "name": "TikDrop"
+                    },
+                    "publisher": {
+                      "@type": "Organization",
+                      "name": "TikDrop",
+                      "logo": {
+                        "@type": "ImageObject",
+                        "url": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.tikdrop.my.id'}/icon-512x512.png`
+                      }
+                    },
+                    "datePublished": "2024-01-01T08:00:00+07:00",
+                    "dateModified": new Date().toISOString(),
+                    "mainEntityOfPage": {
+                      "@type": "WebPage",
+                      "@id": process.env.NEXT_PUBLIC_SITE_URL || "https://www.tikdrop.my.id"
+                    }
+                  },
+                  {
                     "@type": "FAQPage",
                     "mainEntity": [
                       {
