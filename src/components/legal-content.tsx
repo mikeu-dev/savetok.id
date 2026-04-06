@@ -26,14 +26,14 @@ export function LegalContent({ type }: LegalContentProps) {
           <li><strong>Cookies and Web Beacons:</strong> Like any other website, TikDrop uses "cookies" to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited.</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">Google AdSense and Third Parties</h2>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Google AdSense and Cookies</h2>
         <p>
-          This site is affiliated with Google AdSense, a Google advertising service. We use third-party cookies or web beacons in order to serve ads. Google, as a third-party vendor, uses DART cookies to serve ads to our site visitors based upon their visit to our site and other sites on the internet. Users may opt out of the use of the DART cookie by visiting the Google ad and content network Privacy Policy at the following URL: <a href="https://policies.google.com/technologies/ads" className="text-primary hover:underline">https://policies.google.com/technologies/ads</a>
+          Google, as a third-party vendor, uses cookies to serve ads on TikDrop. Google's use of the advertising cookies enables it and its partners to serve ads to our users based on their visit to TikDrop and/or other sites on the Internet. Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" className="text-primary hover:underline">Google Ad Settings</a>.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">Children's Information</h2>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Data Usage and Privacy</h2>
         <p>
-          Another part of our priority is adding protection for children while using the internet. We do not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately.
+          We value your privacy. The video URL you provide is only used to facilitate the extraction and download process. We do not store the video content on our servers permanently, nor do we sell your usage data to third parties.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">Changes to This Privacy Policy</h2>
@@ -56,14 +56,14 @@ export function LegalContent({ type }: LegalContentProps) {
           <li><strong>Cookies dan Web Beacons:</strong> Sama seperti situs web lainnya, TikDrop menggunakan "cookie" untuk menyimpan preferensi pengunjung, dan melacak halaman mana yang dikunjungi pengguna.</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">Google AdSense dan Pihak Ketiga</h2>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Google AdSense dan Cookies</h2>
         <p>
-          Situs ini berafiliasi dengan Google AdSense, sebuah layanan pasang iklan Google. Kami menggunakan cookie atau tag web pihak ketiga dalam rangka menyajikan iklan. Google, sebagai vendor pihak ketiga, menggunakan cookie DART untuk menayangkan iklan ke pengunjung situs kami berdasarkan kunjungan mereka ke situs kami serta situs lain di internet. Pengguna dapat memilih keluar dari penggunaan cookie DART melalui mengunjungi kebijakan privasi iklan dan jaringan konten Google di URL berikut: <a href="https://policies.google.com/technologies/ads" className="text-primary hover:underline">https://policies.google.com/technologies/ads</a>
+          Google, sebagai vendor pihak ketiga, menggunakan cookie untuk menayangkan iklan di TikDrop. Penggunaan cookie iklan oleh Google memungkinkan Google dan mitranya untuk menayangkan iklan kepada pengguna kami berdasarkan kunjungan mereka ke TikDrop dan/atau situs lain di Internet. Pengguna dapat memilih keluar dari iklan yang dipersonalisasi dengan mengunjungi <a href="https://www.google.com/settings/ads" className="text-primary hover:underline">Pengaturan Iklan Google</a>.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">Informasi Anak-anak</h2>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Penggunaan Data dan Privasi</h2>
         <p>
-          Penting bagi kami memberikan perlindungan tambahan untuk anak-anak saat menggunakan dunia maya. Kami tidak bermaksud mengumpulkan informasi identitas pribadi (PII) apa pun dari anak-anak di bawah usia 13 tahun. Jika Anda yakin anak Anda memberikan kami informasi ini di situs web kami, silakan segera hubungi kami.
+          Kami menghargai privasi Anda. URL video yang Anda berikan hanya digunakan untuk memfasilitasi proses ekstraksi dan pengunduhan. Kami tidak menyimpan konten video di server kami secara permanen, dan kami tidak menjual data penggunaan Anda kepada pihak ketiga.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">Perubahan pada Kebijakan Privasi Ini</h2>
@@ -121,7 +121,7 @@ export function LegalContent({ type }: LegalContentProps) {
           TikDrop adalah alat daring (online tool) yang membantu pengguna mengunduh video publik dari TikTok. Namun, layanan kami harus digunakan secara sah dan sesuai etika:
         </p>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Anda dilarang mengunduh video yang memiliki hak cipta ketat dan menyebarkannya kembali untuk tujuan komersial tanpa izin langsung dari pemilik konten aslinya.</li>
+          <li>Anda dilarang mengunduh video yang memiliki hak cipta ketat dan menyebarkannya kembali untuk tujuan komersial tanpa izin langsung dari pemilik konten aslinya. Anda bertanggung jawab penuh untuk memastikan bahwa penggunaan konten yang diunduh mematuhi hukum hak cipta.</li>
           <li>Anda tidak boleh menggunakan layanan kami untuk mengunduh konten ilegal, terkait eksploitasi, berbahaya, atau melanggar hukum lainnya.</li>
         </ul>
 

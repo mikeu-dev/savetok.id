@@ -292,6 +292,23 @@ export default function Home() {
                 <li>{t('seo.features.4')}</li>
                 <li>{t('seo.features.5')}</li>
               </ul>
+
+              <div className="pt-8 mt-8 border-t border-border/30 space-y-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground">{t('seo.article.title')}</h2>
+                <p>{t('seo.article.p1')}</p>
+                
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground pt-2">{t('seo.article.h2_1')}</h3>
+                <p>{t('seo.article.p2')}</p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li dangerouslySetInnerHTML={{ __html: t('seo.article.li1') }} />
+                  <li dangerouslySetInnerHTML={{ __html: t('seo.article.li2') }} />
+                  <li dangerouslySetInnerHTML={{ __html: t('seo.article.li3') }} />
+                  <li dangerouslySetInnerHTML={{ __html: t('seo.article.li4') }} />
+                </ul>
+
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground pt-2">{t('seo.article.h2_2')}</h3>
+                <p>{t('seo.article.p3')}</p>
+              </div>
             </article>
           </motion.div>
 
