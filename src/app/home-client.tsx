@@ -344,7 +344,7 @@ export default function HomeClient() {
                       }
                     },
                     "datePublished": "2024-01-01T08:00:00+07:00",
-                    "dateModified": new Date().toISOString(),
+                    "dateModified": "2026-04-07T08:00:00+07:00",
                     "mainEntityOfPage": {
                       "@type": "WebPage",
                       "@id": process.env.NEXT_PUBLIC_SITE_URL || "https://www.tikdrop.my.id"
