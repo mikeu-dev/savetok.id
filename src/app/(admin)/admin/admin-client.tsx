@@ -4,7 +4,7 @@ import { useAuth } from '@/components/auth-provider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { BarChart, Users, Download, DollarSign } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 // Mock data
@@ -21,6 +21,8 @@ import { BlogManager } from '@/components/admin/blog-manager';
 export default function AdminClient() {
     const { user, loading } = useAuth();
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const activeTab = searchParams.get('tab') || 'dashboard';
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
@@ -49,7 +51,7 @@ export default function AdminClient() {
                     <div className="text-sm text-muted-foreground">Logged in as: {user?.email}</div>
                 </div>
 
-                <Tabs defaultValue="dashboard" className="space-y-8">
+                <Tabs value={activeTab} onValueChange={(value) => router.push(`/admin?tab=${value}`)} className="space-y-8">
                     <TabsList className="grid w-full grid-cols-2 lg:w-[400px]">
                         <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
                         <TabsTrigger value="blog">Manage Blog</TabsTrigger>
