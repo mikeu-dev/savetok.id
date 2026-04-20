@@ -29,10 +29,17 @@ export default async function BlogPage() {
                 <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-primary/10 bg-card/50 backdrop-blur-sm">
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="md:col-span-1 relative aspect-video md:aspect-square bg-muted overflow-hidden">
-                      {/* Placeholder for blog image if needed, for now just a nice gradient */}
-                      <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                        <span className="text-primary font-bold text-4xl opacity-20">TikDrop</span>
-                      </div>
+                      {post.thumbnail ? (
+                        <img 
+                          src={post.thumbnail} 
+                          alt={post.title} 
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                          <span className="text-primary font-bold text-4xl opacity-20">TikDrop</span>
+                        </div>
+                      )}
                     </div>
                     <div className="md:col-span-2">
                       <CardHeader>

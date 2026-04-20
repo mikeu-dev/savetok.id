@@ -84,6 +84,16 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </header>
 
+          {post.thumbnail && (
+            <div className="mb-10 rounded-2xl overflow-hidden border border-primary/10 shadow-lg">
+              <img 
+                src={post.thumbnail} 
+                alt={post.title} 
+                className="w-full aspect-video object-cover"
+              />
+            </div>
+          )}
+
           <div 
             className="prose prose-lg dark:prose-invert max-w-none 
               prose-headings:font-bold prose-headings:text-foreground
