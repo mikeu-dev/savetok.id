@@ -48,6 +48,20 @@ const blogGeneratorPrompt = ai.definePrompt({
   Format output harus JSON sesuai skema. Bahasa yang digunakan adalah {{language}}.`,
 });
 
+// Helper untuk retry otomatis jika server AI sibuk (Error 503/429)
+async function withRetry<T>(fn: () => Promise<T>, retries = 3, delay = 2000): Promise<T> {
+  try {
+    return await fn();
+  } catch (error: any) {
+    if (retries > 0 && (error.status === 503 || error.status === 429)) {
+      console.warn(`AI Server busy (503/429). Retrying in ${delay}ms... (${retries} retries left)`);
+      await new Promise(resolve => setTimeout(resolve, delay));
+      return withRetry(fn, retries - 1, delay * 1.5);
+    }
+    throw error;
+  }
+}
+
 export const generateBlogPostFlow = ai.defineFlow(
   {
     name: 'generateBlogPostFlow',
@@ -56,7 +70,7 @@ export const generateBlogPostFlow = ai.defineFlow(
   },
   async (input) => {
     try {
-      const { output } = await blogGeneratorPrompt(input);
+      const { output } = await withRetry(() => blogGeneratorPrompt(input));
       if (!output) {
         throw new Error('Gagal menghasilkan konten blog dari AI (output kosong).');
       }
@@ -72,9 +86,9 @@ export const generateBlogPostFlow = ai.defineFlow(
 export const generateSlugFlow = ai.defineFlow(
   { name: 'generateSlugFlow', inputSchema: z.string(), outputSchema: z.string() },
   async (title) => {
-    const { text } = await ai.generate({
+    const { text } = await withRetry(() => ai.generate({
       prompt: `Generate a URL-friendly slug (English/ASCII) from this Indonesian/English title: "${title}". Return ONLY the slug string, no extra characters.`,
-    });
+    }));
     return text.trim().toLowerCase().replace(/ /g, '-');
   }
 );
@@ -82,9 +96,9 @@ export const generateSlugFlow = ai.defineFlow(
 export const generateDescriptionFlow = ai.defineFlow(
   { name: 'generateDescriptionFlow', inputSchema: z.string(), outputSchema: z.string() },
   async (title) => {
-    const { text } = await ai.generate({
+    const { text } = await withRetry(() => ai.generate({
       prompt: `Generate a compelling SEO meta description (2 sentences) for a blog post titled "${title}". Use Indonesian language. Return ONLY the description text.`,
-    });
+    }));
     return text.trim();
   }
 );
@@ -92,9 +106,9 @@ export const generateDescriptionFlow = ai.defineFlow(
 export const polishContentFlow = ai.defineFlow(
   { name: 'polishContentFlow', inputSchema: z.string(), outputSchema: z.string() },
   async (content) => {
-    const { text } = await ai.generate({
+    const { text } = await withRetry(() => ai.generate({
       prompt: `Rewrite and polish the following blog content to make it more professional, engaging, and SEO-friendly. Keep the original meaning but improve the tone and structure. Use the same language as the input. Return ONLY the polished markdown content:\n\n${content}`,
-    });
+    }));
     return text.trim();
   }
 );
@@ -102,9 +116,9 @@ export const polishContentFlow = ai.defineFlow(
 export const generateThumbnailFlow = ai.defineFlow(
   { name: 'generateThumbnailFlow', inputSchema: z.string(), outputSchema: z.string() },
   async (title) => {
-    const { text } = await ai.generate({
+    const { text } = await withRetry(() => ai.generate({
       prompt: `Based on this blog title: "${title}", suggest 2-3 English keywords for a relevant stock photo. Return ONLY the keywords separated by commas, no other text.`,
-    });
+    }));
     const keywords = text.trim().replace(/ /g, '');
     return `https://loremflickr.com/800/600/${keywords}`;
   }
