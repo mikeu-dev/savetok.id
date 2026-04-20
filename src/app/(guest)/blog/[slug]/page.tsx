@@ -1,8 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts } from '@/lib/db/blog';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
 import { Calendar, User, Tag, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 
@@ -48,7 +46,6 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
       <main className="grow container mx-auto px-4 py-12">
         <article className="max-w-3xl mx-auto">
           <Link 
@@ -111,7 +108,6 @@ export default async function BlogPostPage({ params }: Props) {
           </footer>
         </article>
       </main>
-      <Footer />
     </div>
   );
 }

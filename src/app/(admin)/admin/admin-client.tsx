@@ -2,8 +2,6 @@
 
 import { useAuth } from '@/components/auth-provider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
 import { Skeleton } from '@/components/ui/skeleton';
 import { BarChart, Users, Download, DollarSign } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -45,9 +43,7 @@ export default function AdminClient() {
     }
 
     return (
-        <>
-            <Header />
-            <main className="container mx-auto px-4 py-8 md:py-12 min-h-screen">
+        <div className="space-y-8">
                 <div className="flex justify-between items-center mb-8">
                     <h1 className="text-3xl font-bold">Admin Panel</h1>
                     <div className="text-sm text-muted-foreground">Logged in as: {user?.email}</div>
@@ -93,8 +89,6 @@ export default function AdminClient() {
                         <BlogManager />
                     </TabsContent>
                 </Tabs>
-            </main>
-            <Footer />
-        </>
+        </div>
     );
 }

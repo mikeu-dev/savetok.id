@@ -3,8 +3,6 @@
 import { useAuth } from '@/components/auth-provider';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
 import { Loader2, LogIn, ShieldCheck, Mail, ArrowRight } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -52,9 +50,7 @@ export default function AuthClient() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-linear-to-b from-background to-primary/5">
-      <Header />
-      <main className="grow flex items-center justify-center p-4">
+    <div className="flex items-center justify-center min-h-[60vh]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,8 +119,6 @@ export default function AuthClient() {
             </CardFooter>
           </Card>
         </motion.div>
-      </main>
-      <Footer />
     </div>
   );
 }

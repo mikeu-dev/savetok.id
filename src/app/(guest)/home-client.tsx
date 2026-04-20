@@ -7,10 +7,8 @@ import { useLocalStorage } from '@/hooks/use-local-storage';
 import type { VideoData } from '@/lib/types';
 import { getVideoInfo } from '@/lib/api';
 
-import { Header } from '@/components/header';
 import { InputForm } from '@/components/input-form';
 import { ResultCard } from '@/components/result-card';
-import { Footer } from '@/components/footer';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Terminal, Zap, ShieldCheck, MonitorSmartphone, Copy, ClipboardPaste, Download as DownloadIcon } from 'lucide-react';
@@ -99,7 +97,6 @@ export default function HomeClient() {
 
   return (
     <>
-      <Header />
       <Suspense fallback={null}>
         <ShareHandler onShare={handleFetchVideo} />
       </Suspense>
@@ -396,7 +393,6 @@ export default function HomeClient() {
 
         </div>
       </motion.main>
-      <Footer />
     </>
   );
 }

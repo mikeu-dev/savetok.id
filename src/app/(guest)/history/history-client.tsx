@@ -7,8 +7,6 @@ import { Calendar, Download, Play } from 'lucide-react';
 
 import { useAuth } from '@/components/auth-provider';
 import { getUserHistory, type DownloadReturn } from '@/lib/db/downloads';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useLanguage } from '@/hooks/use-language';
@@ -49,9 +47,7 @@ export default function HistoryClient() {
     if (!user) return null;
 
     return (
-        <>
-            <Header />
-            <main className="container mx-auto px-4 py-8 md:py-12 min-h-screen">
+        <main className="container mx-auto px-4 py-8 md:py-12 min-h-screen">
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold mb-2">{t('history.title')}</h1>
                     <p className="text-muted-foreground">{t('history.subtitle')}</p>
@@ -113,8 +109,6 @@ export default function HistoryClient() {
                         ))}
                     </div>
                 )}
-            </main>
-            <Footer />
-        </>
+        </main>
     );
 }
