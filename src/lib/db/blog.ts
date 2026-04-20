@@ -17,7 +17,7 @@ const BLOG_COLLECTION = 'blog_posts';
 
 export async function getAllPosts(): Promise<BlogPost[]> {
   try {
-    const q = query(collection(db, BLOG_COLLECTION));
+    const q = query(collection(db, BLOG_COLLECTION), orderBy('date', 'desc'));
     const querySnapshot = await getDocs(q);
     return querySnapshot.docs.map(doc => ({
       ...doc.data()

@@ -142,6 +142,22 @@ export function BlogManager() {
             </div>
 
             <div className="space-y-2">
+              <label className="text-sm font-medium">Thumbnail URL</label>
+              <div className="flex gap-4 items-start">
+                <Input 
+                  value={currentPost.thumbnail || ''} 
+                  onChange={(e) => setCurrentPost({...currentPost, thumbnail: e.target.value})}
+                  placeholder="https://images.unsplash.com/..."
+                />
+                {currentPost.thumbnail && (
+                  <div className="relative w-20 h-20 rounded-lg overflow-hidden border shrink-0">
+                    <img src={currentPost.thumbnail} alt="Preview" className="w-full h-full object-cover" />
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="space-y-2">
               <label className="text-sm font-medium">Description</label>
               <Input 
                 value={currentPost.description || ''} 
@@ -180,9 +196,16 @@ export function BlogManager() {
           {posts.map((post) => (
             <Card key={post.slug} className="hover:border-primary/30 transition-colors">
               <CardContent className="flex items-center justify-between p-6">
-                <div>
-                  <h3 className="font-bold text-lg">{post.title}</h3>
-                  <p className="text-sm text-muted-foreground">/{post.slug} • {post.date}</p>
+                <div className="flex items-center gap-4">
+                  {post.thumbnail && (
+                    <div className="w-16 h-16 rounded-md overflow-hidden border shrink-0">
+                      <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="font-bold text-lg">{post.title}</h3>
+                    <p className="text-sm text-muted-foreground">/{post.slug} • {post.date}</p>
+                  </div>
                 </div>
                 <div className="flex gap-2">
                   <Button variant="ghost" size="icon" onClick={() => { setIsEditing(true); setCurrentPost(post); }}>

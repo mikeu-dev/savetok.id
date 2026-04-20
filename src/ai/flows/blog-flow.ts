@@ -14,6 +14,7 @@ export type BlogGeneratorInput = z.infer<typeof BlogGeneratorInputSchema>;
 const BlogGeneratorOutputSchema = z.object({
   slug: z.string().describe('URL friendly slug.'),
   title: z.string().describe('Engaging title.'),
+  thumbnail: z.string().describe('URL of the main thumbnail image.'),
   description: z.string().describe('Short meta description.'),
   content: z.string().describe('Full Markdown content of the blog post. Use markdown syntax for images, headings, lists, and links.'),
   tags: z.array(z.string()).describe('Array of relevant tags.'),
@@ -33,18 +34,16 @@ const blogGeneratorPrompt = ai.definePrompt({
   1. **Dynamic Content**:
      - Gunakan standar industri TERBARU (2024-2025) untuk teknologi apa pun yang disebutkan.
      - Gunakan bahasa yang santai, gaul, namun tetap informatif (campuran bahasa Indonesia dan istilah tech populer).
-  2. **Typography & Structure**:
+  2. **Visuals**:
+     - **Thumbnail**: Sertakan URL gambar thumbnail yang menarik (800x600) menggunakan Unsplash atau LoremFlickr (contoh: https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800).
+     - **Images**: Sertakan 2-3 gambar relevan di dalam konten menggunakan sintaks Markdown.
+  3. **Typography & Structure**:
      - Gunakan hierarki visual yang jelas: ## untuk bagian utama, ### untuk poin bersarang.
      - Gunakan Blockquotes (>) untuk "Pro Tips", poin penting, atau observasi humoris.
-     - Gunakan **Tebal** secara strategis.
-     - Gunakan list (ul/ol) untuk memecah teks yang panjang.
-     - Sertakan blok kode jika relevan dengan sintaks modern.
-  3. **Humor & Memes**: Sertakan 2-3 lelucon teknis atau observasi meme yang relevan dengan dunia developer/konten kreator.
-  4. **Images**: Sertakan 2-3 gambar relevan menggunakan sintaks Markdown: ![Alt Text Deskriptif](https://loremflickr.com/800/600/tech,coding,humor).
+  4. **Humor & Memes**: Sertakan 2-3 lelucon teknis atau observasi meme yang relevan.
   5. **SEO Optimization**:
      - Pastikan kata kunci utama muncul secara natural.
      - Judul dan deskripsi harus dioptimalkan untuk Click-Through Rate (CTR).
-     - Alt text gambar harus deskriptif.
 
   Format output harus JSON sesuai skema. Bahasa yang digunakan adalah {{language}}.`,
 });
