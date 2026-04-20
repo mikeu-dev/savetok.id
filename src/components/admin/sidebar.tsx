@@ -10,7 +10,8 @@ import {
   Home,
   Users,
   TrendingUp,
-  ShieldCheck
+  ShieldCheck,
+  Settings
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/components/auth-provider';
@@ -26,6 +27,7 @@ export function AdminSidebar() {
     { name: 'Manage Blog', href: '/admin?tab=blog', id: 'blog', icon: FileText },
     { name: 'User Stats', href: '/admin?tab=users', id: 'users', icon: Users },
     { name: 'Analytics', href: '/admin?tab=analytics', id: 'analytics', icon: TrendingUp },
+    { name: 'Settings', href: '/admin?tab=settings', id: 'settings', icon: Settings },
   ];
 
   return (
