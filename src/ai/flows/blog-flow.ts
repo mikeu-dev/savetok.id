@@ -61,9 +61,40 @@ export const generateBlogPostFlow = ai.defineFlow(
         throw new Error('Gagal menghasilkan konten blog dari AI (output kosong).');
       }
       return output;
-    } catch (error) {
-      console.error('AI Flow Error Details:', error);
-      throw error;
+    } catch (error: any) {
+      console.error("AI Flow Error Details:", error);
+      throw new Error(`AI Error: ${error.message || 'Unknown error'}`);
     }
+  }
+);
+
+// New Granular Flows
+export const generateSlugFlow = ai.defineFlow(
+  { name: 'generateSlugFlow', inputSchema: z.string(), outputSchema: z.string() },
+  async (title) => {
+    const { text } = await ai.generate({
+      prompt: `Generate a URL-friendly slug (English/ASCII) from this Indonesian/English title: "${title}". Return ONLY the slug string, no extra characters.`,
+    });
+    return text.trim().toLowerCase().replace(/ /g, '-');
+  }
+);
+
+export const generateDescriptionFlow = ai.defineFlow(
+  { name: 'generateDescriptionFlow', inputSchema: z.string(), outputSchema: z.string() },
+  async (title) => {
+    const { text } = await ai.generate({
+      prompt: `Generate a compelling SEO meta description (2 sentences) for a blog post titled "${title}". Use Indonesian language. Return ONLY the description text.`,
+    });
+    return text.trim();
+  }
+);
+
+export const polishContentFlow = ai.defineFlow(
+  { name: 'polishContentFlow', inputSchema: z.string(), outputSchema: z.string() },
+  async (content) => {
+    const { text } = await ai.generate({
+      prompt: `Rewrite and polish the following blog content to make it more professional, engaging, and SEO-friendly. Keep the original meaning but improve the tone and structure. Use the same language as the input. Return ONLY the polished markdown content:\n\n${content}`,
+    });
+    return text.trim();
   }
 );

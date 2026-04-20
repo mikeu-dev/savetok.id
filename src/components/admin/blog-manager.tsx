@@ -3,7 +3,12 @@
 import { useState, useEffect } from 'react';
 import { BlogPost } from '@/lib/types';
 import { getAllPosts, upsertPost, deletePost } from '@/lib/db/blog';
-import { generateBlogPostFlow } from '@/ai/flows/blog-flow';
+import { 
+  generateBlogPostFlow, 
+  generateSlugFlow, 
+  generateDescriptionFlow, 
+  polishContentFlow 
+} from '@/ai/flows/blog-flow';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -57,6 +62,37 @@ export function BlogManager() {
       toast({ title: "Gagal!", description: "AI gagal menghasilkan konten.", variant: "destructive" });
     } finally {
       setIsGenerating(false);
+    }
+  };
+
+  const handleMagicSlug = async () => {
+    if (!currentPost.title) return;
+    try {
+      const slug = await generateSlugFlow(currentPost.title);
+      setCurrentPost({...currentPost, slug});
+    } catch (error) {
+      toast({ title: "Gagal!", description: "Gagal generate slug.", variant: "destructive" });
+    }
+  };
+
+  const handleMagicDescription = async () => {
+    if (!currentPost.title) return;
+    try {
+      const desc = await generateDescriptionFlow(currentPost.title);
+      setCurrentPost({...currentPost, description: desc});
+    } catch (error) {
+      toast({ title: "Gagal!", description: "Gagal generate deskripsi.", variant: "destructive" });
+    }
+  };
+
+  const handleMagicPolish = async () => {
+    if (!currentPost.content) return;
+    try {
+      const polished = await polishContentFlow(currentPost.content);
+      setCurrentPost({...currentPost, content: polished});
+      toast({ title: "Berhasil!", description: "Konten telah dipoles." });
+    } catch (error) {
+      toast({ title: "Gagal!", description: "Gagal memoles konten.", variant: "destructive" });
     }
   };
 
@@ -131,7 +167,12 @@ export function BlogManager() {
 
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label className="text-sm font-medium">Slug (URL)</label>
+                <label className="text-sm font-medium flex items-center justify-between">
+                  Slug (URL)
+                  <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px]" onClick={handleMagicSlug} title="Generate from Title">
+                    <Sparkles className="w-3 h-3 mr-1" /> Magic Slug
+                  </Button>
+                </label>
                 <Input 
                   value={currentPost.slug || ''} 
                   onChange={(e) => setCurrentPost({...currentPost, slug: e.target.value})}
@@ -165,7 +206,12 @@ export function BlogManager() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium">Description</label>
+              <label className="text-sm font-medium flex items-center justify-between">
+                Description
+                <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px]" onClick={handleMagicDescription} title="Generate from Title">
+                  <Sparkles className="w-3 h-3 mr-1" /> Magic Desc
+                </Button>
+              </label>
               <Input 
                 value={currentPost.description || ''} 
                 onChange={(e) => setCurrentPost({...currentPost, description: e.target.value})}
@@ -174,7 +220,12 @@ export function BlogManager() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium">Content (Markdown)</label>
+              <label className="text-sm font-medium flex items-center justify-between">
+                Content (Markdown)
+                <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px]" onClick={handleMagicPolish} title="Polish & Improve Grammar">
+                  <Sparkles className="w-3 h-3 mr-1" /> Magic Polish
+                </Button>
+              </label>
               <div data-color-mode="light" className="border rounded-xl overflow-hidden">
                 <MDEditor
                   value={currentPost.content || ''}
