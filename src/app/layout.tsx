@@ -116,6 +116,8 @@ const outfit = Outfit({
   fallback: ["system-ui", "arial"],
 });
 
+import { LayoutContent } from "@/components/layout-content";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -164,7 +166,9 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <LayoutContent children={children} />
+              <LayoutContent>
+                {children}
+              </LayoutContent>
               <Toaster />
               <ScrollToTop />
               <AccessibilityWidget />
@@ -175,19 +179,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  );
-}
-
-// Separate component to use usePathname
-import { usePathname } from "next/navigation";
-function LayoutContent({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  // Create a key based on the top-level route segment to force re-mounting when switching groups
-  const rootSegment = pathname.split('/')[1] || 'root';
-  
-  return (
-    <div key={rootSegment} className="grow flex flex-col">
-      {children}
-    </div>
   );
 }
