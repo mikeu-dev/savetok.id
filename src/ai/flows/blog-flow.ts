@@ -98,3 +98,14 @@ export const polishContentFlow = ai.defineFlow(
     return text.trim();
   }
 );
+
+export const generateThumbnailFlow = ai.defineFlow(
+  { name: 'generateThumbnailFlow', inputSchema: z.string(), outputSchema: z.string() },
+  async (title) => {
+    const { text } = await ai.generate({
+      prompt: `Based on this blog title: "${title}", suggest 2-3 English keywords for a relevant stock photo. Return ONLY the keywords separated by commas, no other text.`,
+    });
+    const keywords = text.trim().replace(/ /g, '');
+    return `https://loremflickr.com/800/600/${keywords}`;
+  }
+);

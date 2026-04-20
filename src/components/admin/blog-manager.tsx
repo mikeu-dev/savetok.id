@@ -7,7 +7,8 @@ import {
   generateBlogPostFlow, 
   generateSlugFlow, 
   generateDescriptionFlow, 
-  polishContentFlow 
+  polishContentFlow,
+  generateThumbnailFlow
 } from '@/ai/flows/blog-flow';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -93,6 +94,16 @@ export function BlogManager() {
       toast({ title: "Berhasil!", description: "Konten telah dipoles." });
     } catch (error) {
       toast({ title: "Gagal!", description: "Gagal memoles konten.", variant: "destructive" });
+    }
+  };
+
+  const handleMagicThumbnail = async () => {
+    if (!currentPost.title) return;
+    try {
+      const thumbUrl = await generateThumbnailFlow(currentPost.title);
+      setCurrentPost({...currentPost, thumbnail: thumbUrl});
+    } catch (error) {
+      toast({ title: "Gagal!", description: "Gagal generate thumbnail.", variant: "destructive" });
     }
   };
 
@@ -190,7 +201,12 @@ export function BlogManager() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium">Thumbnail URL</label>
+              <label className="text-sm font-medium flex items-center justify-between">
+                Thumbnail URL
+                <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px]" onClick={handleMagicThumbnail} title="Generate from Title">
+                  <Sparkles className="w-3 h-3 mr-1" /> Magic Thumb
+                </Button>
+              </label>
               <div className="flex gap-4 items-start">
                 <Input 
                   value={currentPost.thumbnail || ''} 
